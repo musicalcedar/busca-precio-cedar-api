@@ -1,17 +1,17 @@
 const express = require("express");
 
 const DB_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRtnrRx7rPw8Fg8iWZKqY99wTA1QuPAZT7bCfLTn6f5LMCkU0lWmikWdLk8g7YFenowC8pvCvzqf_GG/pub?gid=1914106577&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vToVZXzexISkvicjYnDhCqr6aEfdBSZlTnQwe7VM10WxKPE6J0cZ_O1Se2ANlMTE2G94RkDqmc8yhsR/pub?gid=639621066&single=true&output=csv";
 
 const LIST_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRtnrRx7rPw8Fg8iWZKqY99wTA1QuPAZT7bCfLTn6f5LMCkU0lWmikWdLk8g7YFenowC8pvCvzqf_GG/pub?gid=506519268&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vToVZXzexISkvicjYnDhCqr6aEfdBSZlTnQwe7VM10WxKPE6J0cZ_O1Se2ANlMTE2G94RkDqmc8yhsR/pub?gid=1432800402&single=true&output=csv";
 
 const apiRouter = (server) => {
   const router = express.Router();
   server.use("/api", router);
 
   router.get("/data", async (req, res) => {
-    const FECHA = "31-10-2024";
+    const FECHA = "01-11-2024";
     try {
       const response = await fetch(DB_URL);
       const resText = await response.text();
@@ -27,7 +27,6 @@ const apiRouter = (server) => {
           precio: Number(arrRow[5]),
           totalProductos: 0,
         };
-
         return product;
       });
 
