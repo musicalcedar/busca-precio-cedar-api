@@ -54,6 +54,8 @@ const apiRouter = (server) => {
         return item;
       });
 
+      data.sort((a, b) => b.sku.localeCompare(a.sku));
+
       res.status(200).json(data);
     } catch (err) {
       console.log(err);
