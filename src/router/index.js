@@ -46,6 +46,10 @@ const apiRouter = (server) => {
         const item = {
           referencia: arrRow[0],
           descripcion: arrRow[1].trim(),
+          price: Number(arrRow[2]),
+          stock: Number(arrRow[3]),
+          brand: arrRow[4].trim().toUpperCase(),
+          images: arrRow[5].split(";").map((image) => image.replace('"', "")),
         };
         return item;
       });
