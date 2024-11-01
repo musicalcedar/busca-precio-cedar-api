@@ -3,7 +3,10 @@ const apiRouter = require("./router/index.js");
 const cors = require("cors");
 
 const createServer = () => {
-  const ACCEPTED_ORIGINS = ["https://busca-precios-cedar.vercel.app"];
+  const ACCEPTED_ORIGINS = [
+    "https://busca-precios-cedar.vercel.app, https://distribuidores.musicalcedar.com",
+    "http://localhost:3000",
+  ];
   const options = {
     origin: (origin, callback) => {
       if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
