@@ -54,7 +54,7 @@ const apiRouter = (server) => {
         return item;
       });
 
-      data.sort((a, b) => b.referencia.localeCompare(a.referenciano));
+      data.sort((a, b) => b.referencia.localeCompare(a.referencia));
 
       res.status(200).json(data);
     } catch (err) {
