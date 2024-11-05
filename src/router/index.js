@@ -33,7 +33,7 @@ const apiRouter = (server) => {
       res.status(200).json({ data, fecha: FECHA });
     } catch (err) {
       console.log(err);
-      return [];
+      res.status(500).json({ error: "Error al obtener datos" });
     }
   });
   router.get("/list", async (req, res) => {
@@ -54,12 +54,14 @@ const apiRouter = (server) => {
         return item;
       });
 
-      data.sort((a, b) => b.sku.localeCompare(a.sku));
+      console.log(data);
+
+      data.sort((a, b) => b.referencia.localeCompare(a.referenciano));
 
       res.status(200).json(data);
     } catch (err) {
       console.log(err);
-      return [];
+      res.status(500).json({ error: "Error al obtener datos" });
     }
   });
 };
