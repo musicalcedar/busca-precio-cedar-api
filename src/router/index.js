@@ -40,7 +40,7 @@ const apiRouter = (server) => {
     try {
       const response = await fetch(LIST_URL);
       const resText = await response.text();
-      const arrList = resText.split("\r\n").slice(2);
+      const arrList = resText.split("\r\n").slice(1);
       const data = arrList.map((row) => {
         const arrRow = row.split(",");
         const item = {
