@@ -11,7 +11,7 @@ const apiRouter = (server) => {
   server.use("/api", router);
 
   router.get("/data", async (req, res) => {
-    const FECHA = "25<-11-2024";
+    const FECHA = "25-11-2024";
     try {
       const response = await fetch(DB_URL);
       const resText = await response.text();
