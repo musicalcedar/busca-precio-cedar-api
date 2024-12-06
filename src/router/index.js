@@ -1,10 +1,10 @@
 const express = require("express");
 
 const DB_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxy7xHRjrVkEAIFqyPzq0WqZBuApdnIX79PtCu_09sJCThvPFSasf5fRs7uNRbG4ZJ8f6z_V1JDkX1/pub?gid=464389803&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAScasInZzDw-KrUpI_ijpsJu8AFOqUQOYtTVEplfvYzcpVBj-WQZPKcyMaY7tP9HbXLG46sTPY4sc/pub?gid=433791720&single=true&output=csv";
 
 const LIST_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxy7xHRjrVkEAIFqyPzq0WqZBuApdnIX79PtCu_09sJCThvPFSasf5fRs7uNRbG4ZJ8f6z_V1JDkX1/pub?gid=1887188639&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAScasInZzDw-KrUpI_ijpsJu8AFOqUQOYtTVEplfvYzcpVBj-WQZPKcyMaY7tP9HbXLG46sTPY4sc/pub?gid=802229673&single=true&output=csv";
 
 const apiRouter = (server) => {
   const router = express.Router();
