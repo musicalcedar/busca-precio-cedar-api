@@ -1,17 +1,17 @@
 const express = require("express");
 
 const DB_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRPxg2UUejfWowWAM1n0_t_cgZYzaAKHM7G1EuA-oFpYuBAlg5utdzKEzaw4I_wDDWQqrXeb4WFvtKM/pub?gid=1863172420&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkXk7ZUoUABLETUqUwMYXZrsId3hw-jEtIjSCJ4IxW5mAxPpw0Eaubk7o4x7BjEP4R8PvDeKk6ybfc/pub?gid=980373953&single=true&output=csv";
 
 const LIST_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRPxg2UUejfWowWAM1n0_t_cgZYzaAKHM7G1EuA-oFpYuBAlg5utdzKEzaw4I_wDDWQqrXeb4WFvtKM/pub?gid=373892174&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkXk7ZUoUABLETUqUwMYXZrsId3hw-jEtIjSCJ4IxW5mAxPpw0Eaubk7o4x7BjEP4R8PvDeKk6ybfc/pub?gid=936569134&single=true&output=csv";
 
 const apiRouter = (server) => {
   const router = express.Router();
   server.use("/api", router);
 
   router.get("/data", async (req, res) => {
-    const FECHA = "13-01-2025";
+    const FECHA = "14-01-2025";
     try {
       const response = await fetch(DB_URL);
       const resText = await response.text();
