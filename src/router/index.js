@@ -1,17 +1,17 @@
 const express = require("express");
 
 const DB_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBLxN-THmth8Au7rhRNTN5hu710X5Vwtqyv3dZ8NQIwTffbUSZfhqWELuxiTEshFQLJ5dtMra9wLH/pub?gid=713281828&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6Ca3QTJMpaeGo14MA5MRQTT6ko-_KfRrLmXVWoJCOCxv7vTIg2AAEKO6I1wykadp2GrF5SyvhyBSn/pub?gid=1015691732&single=true&output=csv";
 
 const LIST_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBLxN-THmth8Au7rhRNTN5hu710X5Vwtqyv3dZ8NQIwTffbUSZfhqWELuxiTEshFQLJ5dtMra9wLH/pub?gid=549086244&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6Ca3QTJMpaeGo14MA5MRQTT6ko-_KfRrLmXVWoJCOCxv7vTIg2AAEKO6I1wykadp2GrF5SyvhyBSn/pub?gid=1068174231&single=true&output=csv";
 
 const apiRouter = (server) => {
   const router = express.Router();
   server.use("/api", router);
 
   router.get("/data", async (req, res) => {
-    const FECHA = "10-04-2025";
+    const FECHA = "11-04-2025";
     try {
       const response = await fetch(DB_URL);
       const resText = await response.text();
@@ -49,7 +49,7 @@ const apiRouter = (server) => {
           price: Number(arrRow[2]),
           stock: Number(arrRow[3]),
           brand: arrRow[4].trim().toUpperCase(),
-          images: arrRow[5].split(";").map((image) => image.replace('"', "")),
+          images: arrRow[6].split(";").map((image) => image.replace('"', "")),
         };
         return item;
       });
